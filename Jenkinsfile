@@ -12,9 +12,6 @@ pipeline {
       stage("Test") {
          steps {
             script {
-			def mvnHome = tool 'M3';
-			env.JAVA_HOME="${tool 'JDK8'}"
-			env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
                if(isUnix()) {
                   sh "mvn test"
                } else {
